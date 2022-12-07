@@ -8,12 +8,12 @@ const Header = () => {
 
     return (
         <Navbar dark color='primary' sticky='top' expand='md'>
-            <NavbarBrand lastName='ms-5' href='/' >
+            <NavbarBrand className='ms-3' href='/' >
                 <img src='' alt='RR logo' className='float-start'></img>
-                <h1 className='mt-1'>Route Runners</h1>
+                <h1 className='col-12'>Route Runners</h1>
             </NavbarBrand>
 
-            <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
+            <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} className='col-12' />
             <Collapse isOpen={menuOpen} navbar>
                 <Nav className='ms-auto' navbar>
                     <NavItem>
@@ -37,9 +37,7 @@ const Header = () => {
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='/'>
-
-                        </NavLink>
+                        <NavLink className='nav-link' to='/'></NavLink>
                     </NavItem>
                 </Nav>
             </Collapse>
