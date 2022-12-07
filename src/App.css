@@ -1,12 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
 
 .home-page {
   background-image: url('images/open-road.png');
-  height: 100vh;
+  height: auto;
   width: auto;
   margin: 0;
+}
+
+#countymap {
+  padding: 50px;
+  max-height: 100vh;
+  width: auto;
+}
+
+#insertwide {
+  height: auto;
+  width: auto;
+  margin: auto;
+  padding: 5px;
+}
+
+#claimspace {
+  height: 300px;
+  width: auto;
+  padding: 5px;
+}
+
+.home-page p {
+  margin: 50px 30px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 32px;
+  color: #fff;
 }
 .card-img-overlay .card-title {
   color: white;
@@ -23,6 +52,10 @@ body {
   background-image: linear-gradient(#cec8ff, white);
   padding: 20px 0;
   margin-top: 2rem;
+}
+
+.navbar {
+  font-family: 'Orbitron', sans-serif;
 }
 
 .navbar-brand {
