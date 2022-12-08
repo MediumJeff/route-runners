@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, NavbarBrand, Collapse, NavbarToggler, Nav, NavItem } from 'reactstrap';
+import Logo from '../images/RRLogo.png';
 
 
 const Header = () => {
@@ -8,8 +9,8 @@ const Header = () => {
 
     return (
         <Navbar dark color='primary' sticky='top' expand='md'>
-            <NavbarBrand className='ms-3' href='/' >
-                <img src='' alt='RR logo' className='float-start'></img>
+            <NavbarBrand href='/' >
+                <img src={Logo} alt='RR logo' className='logo float-start'></img>
                 <h1 className='col-12'>Route Runners</h1>
             </NavbarBrand>
 

@@ -102,3 +102,38 @@ body {
   opacity: 0;
   transition: 300ms ease-in;
 }
+
+.logo {
+  border-radius: 20px;
+}
+
+.service-page {
+  background-image: url('images/open-road.png');
+  background-size: 100%;
+  height: auto;
+  width: auto;
+  margin: 0;
+}
+
+.service-page ul {
+  font-size: 32px;
+  padding: 20px;
+  color: white;
+  margin-left: 20px;
+}
+
+.service-page img {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+@media (max-width: 640px) {
+  .service-page img {
+  display: none;
+  }
+}
+
+.service-page p {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+}
