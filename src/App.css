@@ -50,10 +50,10 @@ body {
 }
 
 .site-footer {
-  background-image: linear-gradient(to right, #510e5a, #3046c5, #510e5a);
+  background-image: linear-gradient(to right, black, grey, gold);
   padding: 20px 0;
   margin-top: 2rem;
-  color: black;
+  color: gold;
 }
 
 .site-footer a {
@@ -79,7 +79,7 @@ body {
 
 .navbar-dark {
   background-color: #901cad;
-  background-image: linear-gradient(to right, #510e5a, #3046c5, #510e5a);
+  background-image: linear-gradient(to right, gold, grey, black);
   min-height: 8rem;
 }
 

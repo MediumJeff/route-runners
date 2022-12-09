@@ -18,22 +18,22 @@ const Header = () => {
             <Collapse isOpen={menuOpen} navbar>
                 <Nav className='ms-auto' navbar>
                     <NavItem>
-                        <NavLink className='nav-link float-end' to='/'>
+                        <NavLink className='nav-link text-center' to='/'>
                             <i className='fa fa-home fa-lg' /> Home
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link float-end' to='/services'>
+                        <NavLink className='nav-link text-center' to='/services'>
                             <i className='fa fa-truck fa-lg' /> Services
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link float-end' to='/about'>
+                        <NavLink className='nav-link text-center' to='/about'>
                             <i className='fa fa-list fa-lg' /> About
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link float-end' to='/contact'>
+                        <NavLink className='nav-link text-center' to='/contact'>
                             <i className='fa fa-address-card fa-lg' /> Contact
                         </NavLink>
                     </NavItem>
