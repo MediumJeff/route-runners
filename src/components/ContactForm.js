@@ -1,10 +1,9 @@
 import React from 'react';
-import { Formik, Form, Field, useField } from 'formik';
+import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 
-
 const TextInput = ({ label, ...props }) => {
-    const [field, meta] = useField(props)
+    const [field, meta] = useField(props);
     return (
         <>
             <label htmlFor={props.id || props.name}>{label}</label>
@@ -22,6 +21,7 @@ const CheckboxInput = ({ children, ...props }) => {
         <div>
             <label className='checkbox-input'>
                 <input type='checkbox' {...field} {...props} />
+                {children}
             </label>
             {meta.touched && meta.error ? (
                 <div className='error'>{meta.error}</div>
@@ -43,17 +43,6 @@ const SelectInput = ({ label, ...props }) => {
     );
 };
 
-const DatePicker = ({ name, value, onChange }) => {
-    return (
-        <DatePicker
-            selected={(value && new Date(value)) || null}
-            onChange={val => {
-                onChange(name, val);
-            }}
-        />
-    );
-};
-
 const ContactForm = () => {
     return (
         <>
@@ -63,7 +52,7 @@ const ContactForm = () => {
                     email: '',
                     customer: '',
                     service: [],
-                    date: '',
+                    date: {},
                     info: ''
                 }}
                 validationSchema={Yup.object({
@@ -79,15 +68,10 @@ const ContactForm = () => {
                         'Invalid job type'
                     )
                     .required('Required'),
-                    service: Yup.array()
-                    .min(1).of(
-                        ['moving', 'packing', 'trash', 'pickup', 'maintenance'], 'Invalid service'
-                    )
-                    .required('Required'),
                 })}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
-                        JSON.stringify(values, null, 2);
+                        alert(JSON.stringify(values, null, 2));
                         setSubmitting(false);
                     }, 400);
                 }}
@@ -97,13 +81,15 @@ const ContactForm = () => {
                         label='Name'
                         name='name'
                         type='text'
+                        className='col-sm-4 m-2'
                     />
                     <TextInput
                         label='Email'
                         name='email'
                         type='text'
+                        className='col-sm-4 m-2'
                     />
-                    <SelectInput label='I am a:' name='customer'>
+                    <SelectInput label='I am a:' name='customer' className='col-sm-4 m-2'>
                         <option value=''>Select one</option>
                         <option value='homeowner'>Homeowner</option>
                         <option value='renter'>Renter</option>
@@ -113,29 +99,24 @@ const ContactForm = () => {
                         <option value='businessowner'>Office Manager</option>
                         <option value='other'>Other</option>
                     </SelectInput>
-                    <CheckboxInput label='I am interested in (check all that apply)' name='service'>
-                        <Field type='checkbox' name='service' value='moving'>Moving Services</Field>
-                        <Field type='checkbox' name='service' value='packing'>Packing Services</Field>
-                        <Field type='checkbox' name='service' value='trash'>Trash/Junk Removal</Field>
-                        <Field type='checkbox' name='service' value='pickup'>Pickup/Delivery Service</Field>
-                        <Field type='checkbox' name='service' value='maintenance'>Property Maintenance</Field>
-                    </CheckboxInput>
-                    <DatePicker
-                        label='Estimated date of service'
-                        name='date'
-                        type='date'
-                    />
+                    <label>Services requested (chek all that apply):</label>
+                        <CheckboxInput type='checkbox' name='service' value='moving'> Moving Services</CheckboxInput>
+                        <CheckboxInput type='checkbox' name='service' value='packing'> Packing Services</CheckboxInput>
+                        <CheckboxInput type='checkbox' name='service' value='trash'> Trash/Junk Removal</CheckboxInput>
+                        <CheckboxInput type='checkbox' name='service' value='pickup'> Pickup/Delivery Service</CheckboxInput>
+                        <CheckboxInput type='checkbox' name='service' value='maintenance'> Property Maintenance</CheckboxInput>
                     <TextInput
                         label='Additional information'
                         name='info'
                         type='text'
+                        className='m-3 col-sm-7'
                     />
-
+                    <br/>
                     <button type='submit'>Submit</button>
                 </Form>
             </Formik>
         </>
-    )
-}
+    );
+};
 
 export default ContactForm;
