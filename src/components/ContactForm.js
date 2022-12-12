@@ -1,6 +1,9 @@
 import React from 'react';
+import { Row } from 'reactstrap';
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
+import { DatePickerField } from './DatePickerField';
+import emailjs from '@emailjs/browser';
 
 const TextInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
@@ -44,6 +47,16 @@ const SelectInput = ({ label, ...props }) => {
 };
 
 const ContactForm = () => {
+
+/*    const sendEmail = () => {  
+      emailjs.sendForm("process.env.REACT_APP_EMAIL_SERVICE", "process.env.REACT_APP_EMAIL_TEMPLATE", result, "process.env.REACT_APP_EMAIL_PUBLIC")
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
+*/
     return (
         <>
             <Formik
@@ -52,7 +65,7 @@ const ContactForm = () => {
                     email: '',
                     customer: '',
                     service: [],
-                    date: {},
+                    date: '',
                     info: ''
                 }}
                 validationSchema={Yup.object({
@@ -64,14 +77,22 @@ const ContactForm = () => {
                     .required('Required'),
                     customer: Yup.string()
                     .oneOf(
-                        ['homeowner', 'renter', 'realtor', 'propertymanager', 'hoamemeber', 'businessowner', 'other'],
+                        ['homeowner', 'renter', 'realtor', 'propertymanager', 'hoamember', 'businessowner', 'other'],
                         'Invalid job type'
                     )
                     .required('Required'),
+                    date: Yup.date(),
                 })}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
+                        let result = JSON.stringify(values, null, 2);
+                        emailjs.send("process.env.REACT_APP_EMAIL_SERVICE", "process.env.REACT_APP_EMAIL_TEMPLATE", result, "process.env.REACT_APP_EMAIL_PUBLIC")
+                        .then((result) => {
+                            console.log(result.text);
+                        }, (error) => {
+                            console.log(error.text);
+                        });
+                        alert(result);
                         setSubmitting(false);
                     }, 400);
                 }}
@@ -89,7 +110,7 @@ const ContactForm = () => {
                         type='text'
                         className='col-sm-4 m-2'
                     />
-                    <SelectInput label='I am a:' name='customer' className='col-sm-4 m-2'>
+                    <SelectInput label='I am a:' name='customer' className='m-2'>
                         <option value=''>Select one</option>
                         <option value='homeowner'>Homeowner</option>
                         <option value='renter'>Renter</option>
@@ -105,11 +126,16 @@ const ContactForm = () => {
                         <CheckboxInput type='checkbox' name='service' value='trash'> Trash/Junk Removal</CheckboxInput>
                         <CheckboxInput type='checkbox' name='service' value='pickup'> Pickup/Delivery Service</CheckboxInput>
                         <CheckboxInput type='checkbox' name='service' value='maintenance'> Property Maintenance</CheckboxInput>
+                    <Row className='m-2'>
+                    <label>Estimated date of service:</label>
+                    <DatePickerField name='date' />
+                    </Row>
                     <TextInput
-                        label='Additional information'
+                        id='textarea'
+                        label='Additional information (optional)'
                         name='info'
                         type='text'
-                        className='m-3 col-sm-7'
+                        className='m-3 mt-0 col-sm-5'
                     />
                     <br/>
                     <button type='submit'>Submit</button>

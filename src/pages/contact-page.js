@@ -24,7 +24,7 @@ const ContactPage = () => {
         <Col className='col-sm-4 p-5'>
           <i className='fa fa-envelope fa-3x float-end'></i>
         </Col>
-        <Col className='col-sm-8 p-3'>
+        <Col className='col-sm-7 p-3'>
           <ContactForm />
         </Col>
       </Row>

@@ -16,6 +16,7 @@ body {
   padding: 50px;
   max-height: 100vh;
   width: auto;
+  background: rgb(255, 255, 255, 0.2);
 }
 
 #insertwide {
