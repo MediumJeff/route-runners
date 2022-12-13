@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Row } from 'reactstrap';
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import { DatePickerField } from './DatePickerField';
 import emailjs from '@emailjs/browser';
+
 
 const TextInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
@@ -19,7 +20,7 @@ const TextInput = ({ label, ...props }) => {
 };
 
 const CheckboxInput = ({ children, ...props }) => {
-    const [field, meta] = useField({...props, type: 'checkbox'});
+    const [field, meta] = useField({ ...props, type: 'checkbox' });
     return (
         <div>
             <label className='checkbox-input'>
@@ -47,16 +48,8 @@ const SelectInput = ({ label, ...props }) => {
 };
 
 const ContactForm = () => {
+    const [content, setContent] = useState(null);
 
-/*    const sendEmail = () => {  
-      emailjs.sendForm("process.env.REACT_APP_EMAIL_SERVICE", "process.env.REACT_APP_EMAIL_TEMPLATE", result, "process.env.REACT_APP_EMAIL_PUBLIC")
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
-    };
-*/
     return (
         <>
             <Formik
@@ -70,29 +63,33 @@ const ContactForm = () => {
                 }}
                 validationSchema={Yup.object({
                     name: Yup.string()
-                    .max(30, 'Must be less than 30 characters')
-                    .required('Required'),
+                        .max(30, 'Must be less than 30 characters')
+                        .required('Required'),
                     email: Yup.string()
-                    .email('Invalid email address')
-                    .required('Required'),
+                        .email('Invalid email address')
+                        .required('Required'),
                     customer: Yup.string()
-                    .oneOf(
-                        ['homeowner', 'renter', 'realtor', 'propertymanager', 'hoamember', 'businessowner', 'other'],
-                        'Invalid job type'
-                    )
-                    .required('Required'),
+                        .oneOf(
+                            ['homeowner', 'renter', 'realtor', 'propertymanager', 'hoamember', 'businessowner', 'other'],
+                            'Invalid job type'
+                        )
+                        .required('Required'),
                     date: Yup.date(),
                 })}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
-                        let result = JSON.stringify(values, null, 2);
-                        emailjs.send("process.env.REACT_APP_EMAIL_SERVICE", "process.env.REACT_APP_EMAIL_TEMPLATE", result, "process.env.REACT_APP_EMAIL_PUBLIC")
-                        .then((result) => {
-                            console.log(result.text);
-                        }, (error) => {
-                            console.log(error.text);
-                        });
-                        alert(result);
+                        let formInfo = JSON.stringify(values, null, 2);
+                        setContent(formInfo);
+                        const sendEmail = () => {
+                            emailjs.send()
+                                .then((result) => {
+                                    console.log(result.text);
+                                }, (error) => {
+                                    console.log(error.text);
+                                });
+                        };
+                        sendEmail(content);
+                        alert(content);
                         setSubmitting(false);
                     }, 400);
                 }}
@@ -121,14 +118,14 @@ const ContactForm = () => {
                         <option value='other'>Other</option>
                     </SelectInput>
                     <label>Services requested (chek all that apply):</label>
-                        <CheckboxInput type='checkbox' name='service' value='moving'> Moving Services</CheckboxInput>
-                        <CheckboxInput type='checkbox' name='service' value='packing'> Packing Services</CheckboxInput>
-                        <CheckboxInput type='checkbox' name='service' value='trash'> Trash/Junk Removal</CheckboxInput>
-                        <CheckboxInput type='checkbox' name='service' value='pickup'> Pickup/Delivery Service</CheckboxInput>
-                        <CheckboxInput type='checkbox' name='service' value='maintenance'> Property Maintenance</CheckboxInput>
+                    <CheckboxInput type='checkbox' name='service' value='moving'> Moving Services</CheckboxInput>
+                    <CheckboxInput type='checkbox' name='service' value='packing'> Packing Services</CheckboxInput>
+                    <CheckboxInput type='checkbox' name='service' value='trash'> Trash/Junk Removal</CheckboxInput>
+                    <CheckboxInput type='checkbox' name='service' value='pickup'> Pickup/Delivery Service</CheckboxInput>
+                    <CheckboxInput type='checkbox' name='service' value='maintenance'> Property Maintenance</CheckboxInput>
                     <Row className='m-2'>
-                    <label>Estimated date of service:</label>
-                    <DatePickerField name='date' />
+                        <label>Estimated date of service:</label>
+                        <DatePickerField name='date' />
                     </Row>
                     <TextInput
                         id='textarea'
@@ -137,7 +134,7 @@ const ContactForm = () => {
                         type='text'
                         className='m-3 mt-0 col-sm-5'
                     />
-                    <br/>
+                    <br />
                     <button type='submit'>Submit</button>
                 </Form>
             </Formik>
