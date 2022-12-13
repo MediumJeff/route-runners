@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Row } from 'reactstrap';
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import { DatePickerField } from './DatePickerField';
-import emailjs from '@emailjs/browser';
-
 
 const TextInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
@@ -48,7 +46,6 @@ const SelectInput = ({ label, ...props }) => {
 };
 
 const ContactForm = () => {
-    const [content, setContent] = useState(null);
 
     return (
         <>
@@ -79,17 +76,8 @@ const ContactForm = () => {
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
                         let formInfo = JSON.stringify(values, null, 2);
-                        setContent(formInfo);
-                        const sendEmail = () => {
-                            emailjs.send()
-                                .then((result) => {
-                                    console.log(result.text);
-                                }, (error) => {
-                                    console.log(error.text);
-                                });
-                        };
-                        sendEmail(content);
-                        alert(content);
+                        alert(formInfo);
+                        window.open(`mailto:jjmccrac@gmail.com?subject=Inquiry from ${values.name}&body=${formInfo}`);
                         setSubmitting(false);
                     }, 400);
                 }}
