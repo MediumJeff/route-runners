@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import ContactForm from '../components/ContactForm';
+import ContactFormTwo from '../components/ContactFormTwo';
 
 const ContactPage = () => {
   return (
@@ -25,7 +25,7 @@ const ContactPage = () => {
           <i className='fa fa-envelope fa-3x float-end'></i>
         </Col>
         <Col className='col-sm-7 p-3'>
-          <ContactForm />
+          <ContactFormTwo />
         </Col>
       </Row>
     </>
