@@ -146,3 +146,9 @@ body {
   font-weight: 600;
 }
 
+.about-page {
+  background-image: url('images/open-road.png');
+  background-size: 100vh;
+  font-weight: 600;
+  color: white;
+}
