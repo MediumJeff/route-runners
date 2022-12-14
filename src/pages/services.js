@@ -19,7 +19,7 @@ const Services = () => {
           </ul>
         </Col>
         <Col>
-          <p className='mt-3 lead'>Leave the heavy lifting to us! We use heavy duty moving equipment to safely move your belongings. We will also work to protect your walls, rugs, and furniture. </p>
+          <p className='mt-3'>Leave the heavy lifting to us! We use heavy duty moving equipment to safely move your belongings. We will also work to protect your walls, rugs, and furniture. </p>
         </Col>
         <Col>
           <img src={insertWide} alt='Protecting floors, carpets, and items in truck' className='img-fluid' />
@@ -34,7 +34,7 @@ const Services = () => {
           </ul>
         </Col>
         <Col>
-          <p className='mt-3 lead'>We bring the dumpsters and work to clean your property inside and out. Great turnarounds for a quick rental!</p>
+          <p className='mt-3'>We bring the dumpsters and work to clean your property inside and out. Great turnarounds for a quick rental!</p>
         </Col>
         <Col>
           <img src={dumpster} alt="Empty dumpster" className='img-fluid'/>

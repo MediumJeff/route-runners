@@ -114,6 +114,7 @@ body {
   height: auto;
   width: auto;
   margin: 0;
+  font-weight: 600;
 }
 
 .service-page ul {
@@ -138,3 +139,10 @@ body {
   font-size: 24px;
   color: rgb(255, 255, 255);
 }
+
+.contact-page {
+  background-image: url('images/TruckMotion.png');
+  background-position: 65%;
+  font-weight: 600;
+}
+

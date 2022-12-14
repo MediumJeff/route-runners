@@ -44,7 +44,7 @@ const Footer = () => {
               className='btn btn-link'
               href='tel:+17028001670'
             >
-              <i className='fa fa-phone fa-2x' /> 1-702-800-1670
+              <i className='fa fa-phone fa-2x' /> 702-800-1670
             </a>
             <br />
             <a
@@ -52,7 +52,7 @@ const Footer = () => {
               className='btn btn-link'
               href='sms:+14146870069'
             >
-              <i className='fa fa-mobile fa-2x' />1-414-687-0069
+              <i className='fa fa-mobile fa-2x' />414-687-0069
             </a>
             <br />
             <a
