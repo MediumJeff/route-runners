@@ -1,8 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import countyMap from '../images/County Map.png';
-import insertWide from '../images/Insert_wide-1-768x366.png';
-import reclaimSpace from '../images/ReclaimSpace.png';
+import countyMap from '../images/County Map.webp';
+import insertWide from '../images/Insert_wide-1-768x366.webp';
+import reclaimSpace from '../images/ReclaimSpace.webp';
 
 const Home = () => {
   return (

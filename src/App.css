@@ -6,7 +6,7 @@ body {
 }
 
 .home-page {
-  background-image: url('images/open-road.png');
+  background-image: url('images/open-road.webp');
   height: auto;
   width: auto;
   margin: 0;
@@ -109,7 +109,7 @@ body {
 }
 
 .service-page {
-  background-image: url('images/open-road.png');
+  background-image: url('images/open-road.webp');
   background-size: 100%;
   height: auto;
   width: auto;
@@ -141,13 +141,14 @@ body {
 }
 
 .contact-page {
-  background-image: url('images/open-road.png');
+  background-image: url('images/open-road.webp');
   background-position: 65%;
   font-weight: 600;
+  color: white;
 }
 
 .about-page {
-  background-image: url('images/open-road.png');
+  background-image: url('images/open-road.webp');
   background-size: 100vh;
   font-weight: 600;
   color: white;

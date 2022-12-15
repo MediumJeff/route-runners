@@ -29,7 +29,7 @@ const ContactPage = () => {
             <ContactFormTwo />
           </Col>
         </Row>
-        <h3 className='text-center text-white'>Open Monday through Saturday from 8 AM to 8 PM (Pacific)</h3>
+        <h4 className='text-center text-white'>Open Monday through Saturday from 8 AM to 8 PM (Pacific)</h4>
       </div>
     </>
   )

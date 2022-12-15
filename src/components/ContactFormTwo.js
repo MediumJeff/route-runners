@@ -21,18 +21,18 @@ const ContactFormTwo = () => {
             <Row>
                 <Col>
                     <label className='m-2'>Name</label>
-                    <input type="text" name="user_name" required='required'/>
+                    <input type="text" name="user_name" aria-label='name' required='required'/>
                 </Col>
                 <Col>
                     <label className='m-2'>Email</label>
-                    <input type="email" name="user_email" required='required' />
+                    <input type="email" name="user_email" aria-label='email' required='required' />
                 </Col>
             </Row>
             <Row>
                 <Col>
                     <label className='m-2'>I am a:</label>
-                    <select name='customer_type' required='required'>
-                        <option value=''>Select one</option>
+                    <select name='customer_type' aria-label='customer_type' required='required'>
+                        <option name='customer_type' value=''>Select one</option>
                         <option name='customer_type' value='Homeowner'>Homeowner</option>
                         <option name='customer_type' value='Renter'>Renter</option>
                         <option name='customer_type' value='Realtor'>Realtor</option>
@@ -44,32 +44,32 @@ const ContactFormTwo = () => {
                 </Col>
                 <Col>
                     <label className='m-2'>I am interested in (check all that apply):</label><br />
-                    <div className='ms-3'>
+                    <div className='ms-3' aria-label='service'>
                         <input type='checkbox' name='service' value='Moving services' />
-                        <label for='moving' className='ms-2'>Moving Services</label><br />
+                        <label htmlFor='moving' className='ms-2' aria-label='service'>Moving Services</label><br />
                         <input type='checkbox' name='service' value='Packing services' />
-                        <label for='packing' className='ms-2'>Packing Services</label><br />
+                        <label htmlFor='packing' className='ms-2' aria-label='service'>Packing Services</label><br />
                         <input type='checkbox' name='service' value='Trash'></input>
-                        <label for='trash' className='ms-2'>Trash/Junk Removal</label><br />
+                        <label htmlFor='trash' className='ms-2' aria-label='service'>Trash/Junk Removal</label><br />
                         <input type='checkbox' name='service' value='Pickup/Delivery' />
-                        <label for='pickup' className='ms-2'>Pickup/Delivery Services</label><br />
+                        <label htmlFor='pickup' className='ms-2' aria-label='service'>Pickup/Delivery Services</label><br />
                         <input type='checkbox' name='service' value='Maintenance' />
-                        <label for='maintenance' className='ms-2'>Property Maintenance</label>
+                        <label htmlFor='maintenance' className='ms-2' aria-label='service'>Property Maintenance</label>
                     </div>
                 </Col>
             </Row>
             <Row>
                 <Col>
                     <label className='m-2'>Estimated date of service:</label>
-                    <input type='date' name='date' className='ms-2' required='required'></input>
+                    <input type='date' name='date' className='ms-2' aria-label='date' required='required'></input>
                 </Col>
                 <Col>
                     <label className='m-2'>Additional Information:</label><br/>
-                    <textarea name="message" className='ms-2 w-100 h-100' />
+                    <textarea name="message" aria-label='message' className='ms-2 w-100 h-100' />
                 </Col>
             </Row>
             <Row>
-                <input type="submit" value="Send" className='btn btn-lg btn-primary col-sm-2 mt-5'/>
+                <input type="submit" value="Send" aria-label='submit button' className='btn btn-lg btn-primary col-sm-2 mt-5'/>
             </Row>
         </form>
     );

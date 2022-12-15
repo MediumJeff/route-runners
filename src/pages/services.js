@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import insertWide from '../images/Insert_wide-1-768x366.png';
-import dumpster from '../images/dumpster.png';
+import insertWide from '../images/Insert_wide-1-768x366.webp';
+import dumpster from '../images/dumpster.webp';
 
 
 const Services = () => {

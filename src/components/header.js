@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, NavbarBrand, Collapse, NavbarToggler, Nav, NavItem } from 'reactstrap';
-import Logo from '../images/RRLogo.png';
+import Logo from '../images/RRLogo.webp';
 
 
 const Header = () => {
@@ -18,22 +18,22 @@ const Header = () => {
             <Collapse isOpen={menuOpen} navbar>
                 <Nav className='ms-auto' navbar>
                     <NavItem>
-                        <NavLink className='nav-link text-center' to='/'>
+                        <NavLink className='nav-link text-center' aria-label='Link to home page' to='/'>
                             <i className='fa fa-home fa-lg' /> Home
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link text-center' to='/services'>
+                        <NavLink className='nav-link text-center' aria-label='Link to services page' to='/services'>
                             <i className='fa fa-truck fa-lg' /> Services
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link text-center' to='/about'>
+                        <NavLink className='nav-link text-center' aria-label='Link to about us page' to='/about'>
                             <i className='fa fa-list fa-lg' /> About
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link text-center' to='/contact'>
+                        <NavLink className='nav-link text-center' aria-label='Link to contact form' to='/contact'>
                             <i className='fa fa-address-card fa-lg' /> Contact
                         </NavLink>
                     </NavItem>

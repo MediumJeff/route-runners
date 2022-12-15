@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import truckDrawing from '../images/TruckDrawing.png';
+import truckDrawing from '../images/TruckDrawing.webp';
 
 const About = () => {
   return (
