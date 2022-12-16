@@ -13,11 +13,11 @@ const ContactPage = () => {
           <Row>
             <Col>
               <i className='fa fa-phone fa-5x'></i>
-              <a role='button' className='btn btn-primary ms-2' href='tel:+17028001670'><h3>702.800.1670</h3></a>
+              <a role='button' className='btn btn-primary ms-2' href='tel:+17028001670'><h2>702.800.1670</h2></a>
             </Col>
             <Col>
               <i className='fa fa-mobile fa-5x'></i>
-              <a role='button' className='btn btn-primary ms-2' href='sms:+14146870069'><h3>414.687.0069</h3></a>
+              <a role='button' className='btn btn-primary ms-2' href='sms:+14146870069'><h2>414.687.0069</h2></a>
             </Col>
           </Row>
         </div>
@@ -29,7 +29,7 @@ const ContactPage = () => {
             <ContactFormTwo />
           </Col>
         </Row>
-        <h4 className='text-center text-white'>Open Monday through Saturday from 8 AM to 8 PM (Pacific)</h4>
+        <h3 className='text-center text-white'>Open Monday through Saturday from 8 AM to 8 PM (Pacific)</h3>
       </div>
     </>
   )

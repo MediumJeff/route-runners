@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oxygen', 'Open Sans', sans-serif;
 }
 
 .home-page {
@@ -34,7 +34,6 @@ body {
 
 .home-page p {
   margin: 50px 30px;
-  font-family: 'Oxygen', sans-serif;
   font-size: 32px;
   color: #fff;
 }

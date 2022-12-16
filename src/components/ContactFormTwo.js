@@ -17,7 +17,7 @@ const ContactFormTwo = () => {
     };
 
     return (
-        <form ref={form} onSubmit={sendEmail} className='col-sm-9 me-2'>
+        <form ref={form} onSubmit={sendEmail} className='col-sm-9 me-2 contact-form'>
             <Row>
                 <Col>
                     <label className='m-2'>Name</label>
@@ -30,7 +30,7 @@ const ContactFormTwo = () => {
             </Row>
             <Row>
                 <Col>
-                    <label className='m-2'>I am a:</label>
+                    <label className='m-2 customer-menu'>I am a:</label>
                     <select name='customer_type' aria-label='customer_type' required='required'>
                         <option name='customer_type' value=''>Select one</option>
                         <option name='customer_type' value='Homeowner'>Homeowner</option>
@@ -45,16 +45,16 @@ const ContactFormTwo = () => {
                 <Col>
                     <label className='m-2'>I am interested in (check all that apply):</label><br />
                     <div className='ms-3' aria-label='service'>
-                        <input type='checkbox' name='service' value='Moving services' />
-                        <label htmlFor='moving' className='ms-2' aria-label='service'>Moving Services</label><br />
-                        <input type='checkbox' name='service' value='Packing services' />
-                        <label htmlFor='packing' className='ms-2' aria-label='service'>Packing Services</label><br />
-                        <input type='checkbox' name='service' value='Trash'></input>
-                        <label htmlFor='trash' className='ms-2' aria-label='service'>Trash/Junk Removal</label><br />
-                        <input type='checkbox' name='service' value='Pickup/Delivery' />
-                        <label htmlFor='pickup' className='ms-2' aria-label='service'>Pickup/Delivery Services</label><br />
-                        <input type='checkbox' name='service' value='Maintenance' />
-                        <label htmlFor='maintenance' className='ms-2' aria-label='service'>Property Maintenance</label>
+                        <input type='checkbox' name='service' value='Moving services' aria-label='Moving services' />
+                        <label htmlFor='moving' className='ms-2'>Moving Services</label><br />
+                        <input type='checkbox' name='service' value='Packing services' aria-label='Packing services' />
+                        <label htmlFor='packing' className='ms-2'>Packing Services</label><br />
+                        <input type='checkbox' name='service' value='Trash' aria-label='Trash removal services'></input>
+                        <label htmlFor='trash' className='ms-2'>Trash/Junk Removal</label><br />
+                        <input type='checkbox' name='service' value='Pickup/Delivery' aria-label='Pickup and delivery services'/>
+                        <label htmlFor='pickup' className='ms-2'>Pickup/Delivery Services</label><br />
+                        <input type='checkbox' name='service' value='Maintenance' aria-label='Property maintenance services'/>
+                        <label htmlFor='maintenance' className='ms-2'>Property Maintenance</label>
                     </div>
                 </Col>
             </Row>

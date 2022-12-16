@@ -7,7 +7,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col xs={{ size: 4 }} sm='4' className='text-center col-6'>
-            <h5>Links</h5>
+            <h4>Links</h4>
             <ul className='list-unstyled'>
               <li>
                 <Link to='/' aria-label='Link to home page'>Home</Link>
@@ -24,7 +24,7 @@ const Footer = () => {
             </ul>
           </Col>
           <Col cs='6' sm='4' xs={{ size: 4 }} className='text-center'>
-            <h5>Social</h5>
+            <h4>Social</h4>
             <a
               className='btn btn-social-icon btn-instagram'
               href='http://instagram.com/routerunnersLLC'

@@ -38,7 +38,7 @@ const Header = () => {
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='/'></NavLink>
+                        <NavLink className='nav-link' to='/' aria-label='Link back to home page'></NavLink>
                     </NavItem>
                 </Nav>
             </Collapse>
