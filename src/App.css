@@ -148,7 +148,6 @@ body {
 
 .about-page {
   background-image: url('images/open-road.webp');
-  background-size: 100vh;
   font-weight: 600;
   color: white;
 }
